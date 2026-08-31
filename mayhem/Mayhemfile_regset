@@ -1,0 +1,11 @@
+project: savantenvs/oniguruma
+target: regset
+
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/regset/testsuite
+
+cmds:
+  - cmd: /mayhem/fuzz_regset
+    libfuzzer: true
+    dictionary: /mayhem/mayhem/regset/regset.dict

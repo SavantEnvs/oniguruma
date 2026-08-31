@@ -1,0 +1,11 @@
+project: savantenvs/oniguruma
+target: deluxe
+
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/deluxe/testsuite
+
+cmds:
+  - cmd: /mayhem/fuzz_deluxe
+    libfuzzer: true
+    dictionary: /mayhem/mayhem/deluxe/deluxe.dict

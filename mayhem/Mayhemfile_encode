@@ -1,0 +1,11 @@
+project: savantenvs/oniguruma
+target: encode
+
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/encode/testsuite
+
+cmds:
+  - cmd: /mayhem/fuzz_encode
+    libfuzzer: true
+    dictionary: /mayhem/mayhem/encode/encode.dict
