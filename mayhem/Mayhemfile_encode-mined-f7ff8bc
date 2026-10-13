@@ -1,0 +1,12 @@
+project: savantenvs/oniguruma
+target: encode-mined-f7ff8bc
+# seed-from: https://app.mayhem.security/savantenvs/oniguruma/encode
+
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/encode-mined-f7ff8bc/testsuite
+
+cmds:
+  - cmd: /mayhem/fuzz_encode
+    libfuzzer: true
+    dictionary: /mayhem/mayhem/encode-mined-f7ff8bc/encode.dict
